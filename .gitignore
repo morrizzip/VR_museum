@@ -2,6 +2,4 @@ __pycache__/
 .env
 .venv
 instance/
-.instance
-instance
 src/app/migrations
