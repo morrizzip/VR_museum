@@ -1,5 +1,0 @@
-__pycache__/
-.env
-.venv
-instance/
-src/app/migrations
