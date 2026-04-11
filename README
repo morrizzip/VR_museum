@@ -1,0 +1,22 @@
+for download dependencies:
+    pip install -r req.txt
+
+for create db:
+    flask db init
+
+for create migrate:
+    flask db migrate -m "Название миграции"
+
+for apply db update:
+    flask db upgrade
+
+for start:
+    flask run
+
+
+
+
+Useful commands:
+    flask db downgrade — отменить последнее изменение (откатить базу на шаг назад).
+    flask db history — посмотреть список всех созданных миграций.
+
