@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c4n2xq8dtxmur"]
+
+[ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_hqtel"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_sweqy"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_2hs0m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2hs0m"]
+
+[node name="player" type="Node3D" unique_id=103094377]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=552282409]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=619386016]
+
+[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" unique_id=1486361032 instance=ExtResource("1_i3pqv")]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=164655601]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/LeftController" unique_id=1323475398 instance=ExtResource("2_hqtel")]
+
+[node name="MovementTurn" parent="XROrigin3D/LeftController" unique_id=1937633582 instance=ExtResource("3_2hs0m")]
+turn_mode = 2
+
+[node name="MovementDirect" parent="XROrigin3D/LeftController" unique_id=1861696522 instance=ExtResource("4_1jxqw")]
+strafe = true
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=678716529]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightController" unique_id=1460184479 instance=ExtResource("3_sweqy")]
+
+[node name="MovementDirect" parent="XROrigin3D/RightController" unique_id=1793490504 instance=ExtResource("4_1jxqw")]
+strafe = true
+
+[node name="MovementTurn" parent="XROrigin3D/RightController" unique_id=836667239 instance=ExtResource("3_2hs0m")]
+turn_mode = 2
+
+[node name="PlayerBody" parent="XROrigin3D" unique_id=238746675 instance=ExtResource("6_2hs0m")]
+collision_layer = 524289
+axis_lock_linear_y = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/PlayerBody" unique_id=1286954403]
+shape = SubResource("CapsuleShape3D_2hs0m")
