@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://brj4o3p46n13u"]
+
+[ext_resource type="Script" uid="uid://dewmshybw0btc" path="res://canvas_layer_2.gd" id="1_jnfmy"]
+[ext_resource type="Texture2D" uid="uid://ccp2tre4p5aib" path="res://assets/icon/arrow_left_15601.png" id="1_tcsnp"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=938765536]
+script = ExtResource("1_jnfmy")
+
+[node name="Control" type="Control" parent="." unique_id=935519142]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 287.0
+offset_bottom = 254.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2055947174]
+layout_mode = 0
+offset_right = 263.0
+offset_bottom = 263.0
+color = Color(1, 1, 1, 0)
+
+[node name="Button" type="Button" parent="Control/ColorRect" unique_id=801765094]
+layout_mode = 0
+offset_top = -36.0
+offset_right = 264.0
+offset_bottom = 228.0
+icon = ExtResource("1_tcsnp")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Control/ColorRect/Button" to="." method="_on_button_hotspot1_pressed"]

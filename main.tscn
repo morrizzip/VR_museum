@@ -1,13 +1,28 @@
 [gd_scene format=3 uid="uid://ddblxno68xji5"]
 
-[ext_resource type="Texture2D" uid="uid://lualhvycxusm" path="res://assets/GS__0855_edit.png" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://duhq0xnsbjemc" path="res://floor.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://brgejm2m8sgv4" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://ce711qwpmwssy" path="res://assets/GS__0863.JPG" id="2_yaehf"]
 [ext_resource type="PackedScene" uid="uid://c4n2xq8dtxmur" path="res://player.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://brj4o3p46n13u" path="res://canvas_layer2.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://4uahuh4a37x0" path="res://canvas_layer3.tscn" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://d0ev1r5hndr04" path="res://canvas_layer4.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://c6cd1edqw77b3" path="res://canvas_layer5.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://cmje1rb0vamsl" path="res://canvas_layer6.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://buhafridsd4cy" path="res://canvas_layer7.tscn" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://b0qmseohkbd2g" path="res://canvas_layer8.tscn" id="13_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://jw1v0g7lh5x3" path="res://canvas_layer9.tscn" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://bjjxy22txletc" path="res://canvas_layer10.tscn" id="15_vivmo"]
+[ext_resource type="PackedScene" uid="uid://bpalml483tr2f" path="res://canvas_layer11.tscn" id="16_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://be7lvd3gamvtx" path="res://icon_canvas_layer.tscn" id="17_074og"]
+[ext_resource type="PackedScene" uid="uid://dsxpem3m4yrax" path="res://mineral_canvas_layer.tscn" id="18_074og"]
+[ext_resource type="PackedScene" uid="uid://dvoynofls6gdu" path="res://assets/minerals/apatit.glb" id="19_cegan"]
+[ext_resource type="PackedScene" uid="uid://c0y1ewpqaorec" path="res://pickable_object.tscn" id="20_82xsv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2yge"]
-panorama = ExtResource("1_1bvp3")
+panorama = ExtResource("2_yaehf")
 
 [sub_resource type="Sky" id="Sky_ig7tw"]
 sky_material = SubResource("PanoramaSkyMaterial_h2yge")
@@ -34,4 +49,89 @@ visible = false
 [node name="StartXR" parent="." unique_id=385154755 instance=ExtResource("2_0xm2m")]
 
 [node name="player" parent="." unique_id=103094377 instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+transform = Transform3D(-0.37793767, 0, 0.925831, 0, 1, 0, -0.925831, 0, -0.37793767, 0, 0.7, 0)
+
+[node name="Viewport2Din3D2" parent="." unique_id=1766897441 instance=ExtResource("6_272bh")]
+transform = Transform3D(-6.967546e-09, -0.20152098, -0.7071067, 0.22542405, -1.2457471e-08, 0, -6.967546e-09, -0.20152098, 0.7071067, -2.7649632, 0.33337224, 1.7850688)
+scene = ExtResource("8_5vw27")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_2.gd")
+
+[node name="Viewport2Din3D" parent="." unique_id=620575666 instance=ExtResource("6_272bh")]
+transform = Transform3D(-5.5501097e-09, -0.16083083, -0.82555676, 0.22499996, -1.24577415e-08, 2.8870955e-15, -8.119403e-09, -0.23528369, 0.56431884, -1.6956335, 0.70636284, 1.8554847)
+scene = ExtResource("8_kek77")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_3.gd")
+
+[node name="Viewport2Din3D3" parent="." unique_id=1253818542 instance=ExtResource("6_272bh")]
+transform = Transform3D(-9.8350625e-09, -0.285, 0, 0.225, -1.2457746e-08, 0, 0, 0, 1, 0.26799095, 0.6348716, -2.640942)
+scene = ExtResource("9_kek77")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_4.gd")
+
+[node name="Viewport2Din3D4" parent="." unique_id=1491619812 instance=ExtResource("6_272bh")]
+transform = Transform3D(-5.5252842e-09, -0.16011147, -0.8272767, 0.22500001, -1.2457746e-08, 9.723933e-16, -8.136317e-09, -0.23577383, 0.5617947, 1.9770386, 0.60320413, -2.0374923)
+scene = ExtResource("10_4c57u")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_5.gd")
+
+[node name="Viewport2Din3D5" parent="." unique_id=662948675 instance=ExtResource("6_272bh")]
+transform = Transform3D(-5.1592814e-09, -0.14950542, -0.8513609, 0.225, -1.2457746e-08, 0, -8.3731875e-09, -0.24263786, 0.5245804, 2.5436058, 0.5560374, -1.5961113)
+scene = ExtResource("11_efxa6")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_6.gd")
+
+[node name="Viewport2Din3D6" parent="." unique_id=935910570 instance=ExtResource("6_272bh")]
+transform = Transform3D(-1.7325159e-09, -0.050204754, 0.9843621, 0.225, -1.2457746e-08, -1.3930816e-15, 9.681263e-09, 0.2805432, 0.17615709, 2.9387484, 0.567859, 0.036247075)
+scene = ExtResource("12_dg77c")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_7.gd")
+
+[node name="Viewport2Din3D7" parent="." unique_id=2012797830 instance=ExtResource("6_272bh")]
+transform = Transform3D(-7.301405e-09, -0.21157978, -0.66997325, 0.225, -1.2457746e-08, 0, -6.5892287e-09, -0.19094238, 0.7423852, 1.9180794, 0.5818113, -1.5068451)
+scene = ExtResource("13_ycdy4")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_8.gd")
+
+[node name="Viewport2Din3D8" parent="." unique_id=1948109490 instance=ExtResource("6_272bh")]
+transform = Transform3D(-2.3626578e-09, -0.06846498, 0.9707164, 0.22499998, -1.2457744e-08, 1.5143573e-16, 9.547055e-09, 0.27665415, 0.24022803, 2.1515846, 0.60713136, 0.14892754)
+scene = ExtResource("14_w48qg")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_9.gd")
+
+[node name="Viewport2Din3D9" parent="." unique_id=315047128 instance=ExtResource("6_272bh")]
+transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707164, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022801, 2.375293, 0.6201132, 0.22463775)
+scene = ExtResource("15_vivmo")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_10.gd")
+
+[node name="Viewport2Din3D10" parent="." unique_id=696647310 instance=ExtResource("6_272bh")]
+transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707165, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022803, 2.6713848, 0.520921, 0.28608024)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="Viewport2Din3D11" parent="." unique_id=1408770659 instance=ExtResource("6_272bh")]
+transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707165, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022803, 2.6713848, 0.520921, 0.28608024)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="Viewport2Din3D12" parent="." unique_id=425233083 instance=ExtResource("6_272bh")]
+transform = Transform3D(0.037310317, 0, 1.3950964, 0, 0.061779425, 0, -0.039613515, 0, 1.3139828, 0.65164363, 0.8270892, 0.67176133)
+scene = ExtResource("17_074og")
+transparent = 1
+scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
+
+[node name="Viewport2Din3D13" parent="." unique_id=1417665574 instance=ExtResource("6_272bh")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5240559, 1.8341289)
+scene = ExtResource("18_074og")
+transparent = 1
+scene_properties_keys = PackedStringArray()
+
+[node name="apatit" parent="." unique_id=237753180 instance=ExtResource("19_cegan")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.7114179, -0.07384649, 1.4713612)
+visible = false
+
+[node name="PickableObject" parent="." unique_id=2123666810 instance=ExtResource("20_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6510749, -0.23741701, 1.8787416)

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dhxaiweqibb8v"]
+
+[ext_resource type="Script" uid="uid://cg8gi54cpiwxl" path="res://canvas_layer.gd" id="1_tg4cr"]
+[ext_resource type="Texture2D" uid="uid://dk5knc2jjqnri" path="res://assets/icon/crop_man.png" id="1_v2lfg"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=187936231]
+script = ExtResource("1_tg4cr")
+
+[node name="Control" type="Control" parent="." unique_id=523059431]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 87.0
+offset_bottom = 136.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=285288793]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 134.0
+color = Color(1, 1, 1, 0)
+
+[node name="Button" type="Button" parent="Control/ColorRect" unique_id=267591498]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 132.0
+icon = ExtResource("1_v2lfg")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Control/ColorRect/Button" to="." method="_on_button_hotspot1_pressed"]

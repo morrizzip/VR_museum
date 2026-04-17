@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://be7lvd3gamvtx"]
+
+[ext_resource type="Script" uid="uid://dvkugeoajlm4g" path="res://icon_canvas_layer.gd" id="1_0121c"]
+[ext_resource type="Texture2D" uid="uid://lr8ph50xntin" path="res://assets/icon/ionic3.png" id="1_fdbig"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=870451204]
+script = ExtResource("1_0121c")
+
+[node name="Control" type="Control" parent="." unique_id=1422403021]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 162.0
+offset_bottom = 163.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1711206482]
+layout_mode = 0
+offset_right = 163.0
+offset_bottom = 165.0
+color = Color(1, 1, 1, 0)
+
+[node name="Button" type="Button" parent="Control/ColorRect" unique_id=943090256]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 225.0
+offset_bottom = 169.0
+icon = ExtResource("1_fdbig")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Control/ColorRect/Button" to="." method="_on_button_point_pressed"]

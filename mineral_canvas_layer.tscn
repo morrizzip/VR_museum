@@ -1,0 +1,252 @@
+[gd_scene format=3 uid="uid://dsxpem3m4yrax"]
+
+[ext_resource type="Texture2D" uid="uid://bovo0vilf40or" path="res://assets/minerals/description_minerlas/description_apatit2.jpg" id="1_bvar3"]
+
+[sub_resource type="FontFile" id="FontFile_rw8rp"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bvar3"]
+font = SubResource("FontFile_rw8rp")
+font_size = 30
+font_color = Color(0.033853278, 0.033853278, 0.033853274, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsouc"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xef33"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l7q2i"]
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xub4"]
+line_spacing = 1.0
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=125989354]
+
+[node name="Control" type="Control" parent="." unique_id=994831615]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -149.0
+offset_right = 144.5
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1377483347]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -15.0
+offset_right = 283.0
+offset_bottom = 135.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1300627162]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 42.0
+offset_right = 167.0
+offset_bottom = 83.0
+text = "Фторапатит"
+label_settings = SubResource("LabelSettings_bvar3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Control" unique_id=2034386345]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 85.0
+offset_right = 161.0
+offset_bottom = 108.0
+text = "Формула минерала  "
+label_settings = SubResource("LabelSettings_vsouc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control" unique_id=658964057]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 89.0
+offset_right = 226.0
+offset_bottom = 132.0
+text = "Ca₅(PO₄)₃F
+"
+label_settings = SubResource("LabelSettings_xef33")
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=1384638376]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 133.0
+offset_right = 157.5
+offset_bottom = 249.0
+
+[node name="ColorRect3" type="ColorRect" parent="Control" unique_id=1658069955]
+layout_mode = 0
+offset_left = 275.5
+offset_top = 118.0
+offset_right = 282.5
+offset_bottom = 249.0
+
+[node name="ColorRect4" type="ColorRect" parent="Control" unique_id=624701388]
+layout_mode = 0
+offset_left = 276.46936
+offset_top = 242.0
+offset_right = 283.46936
+offset_bottom = 360.6748
+rotation = 1.5707964
+
+[node name="Label9" type="Label" parent="Control" unique_id=1995729879]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 108.0
+offset_right = 143.0
+offset_bottom = 131.0
+text = "Описание образца"
+label_settings = SubResource("LabelSettings_l7q2i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=169374690]
+layout_mode = 0
+offset_left = -108.0
+offset_top = 152.0
+offset_right = 5.0
+offset_bottom = 256.0
+text = "Формула минерала  
+
+
+Описание образца                 
+
+"
+label_settings = SubResource("LabelSettings_4xub4")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label5" type="Label" parent="Control" unique_id=1700619217]
+layout_mode = 0
+offset_left = -264.0
+offset_top = 215.0
+offset_right = -151.0
+offset_bottom = 319.0
+text = "Место находки
+Регионы
+Размер образца
+Местоположение
+Коллекции минералов
+"
+label_settings = SubResource("LabelSettings_4xub4")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Control" unique_id=1301058285]
+layout_mode = 0
+offset_left = -177.0
+offset_top = 93.0
+offset_right = -32.0
+offset_bottom = 122.0
+text = "Ca₅(PO₄)₃F
+"
+label_settings = SubResource("LabelSettings_4xub4")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Control" unique_id=1866233313]
+layout_mode = 0
+offset_left = -178.0
+offset_top = 203.0
+offset_right = -82.0
+offset_bottom = 307.0
+text = "
+Чупа
+Россия
+5,5х4х3,5см
+экспозиция
+Хибинская коллекция"
+label_settings = SubResource("LabelSettings_4xub4")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="Control" unique_id=1238512823]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 122.0
+offset_right = 153.0
+offset_bottom = 245.0
+text = "Фрагмент футляровидного  кристалла апатита голубого цвета. Внутренняя часть заполнена кварцем, высота призмы ~ 5.5 см, в поперечнике ~ 3,5 см."
+label_settings = SubResource("LabelSettings_4xub4")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1621115908]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 60.0
+offset_right = 1022.0
+offset_bottom = 320.0
+texture = ExtResource("1_bvar3")
+expand_mode = 1

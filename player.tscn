@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_sweqy"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_dw050"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2hs0m"]
 
@@ -18,6 +20,7 @@
 [node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" unique_id=1486361032 instance=ExtResource("1_i3pqv")]
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=164655601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3608227, 0, 0)
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="XROrigin3D/LeftController" unique_id=1323475398 instance=ExtResource("2_hqtel")]
@@ -28,7 +31,15 @@ turn_mode = 2
 [node name="MovementDirect" parent="XROrigin3D/LeftController" unique_id=1861696522 instance=ExtResource("4_1jxqw")]
 strafe = true
 
+[node name="FunctionPointer" parent="XROrigin3D/LeftController" unique_id=2064499109 instance=ExtResource("5_1jxqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+show_laser = 2
+laser_length = 1
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftController" unique_id=1935628855 instance=ExtResource("6_dw050")]
+
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=678716529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35377336, 0, 0)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="XROrigin3D/RightController" unique_id=1460184479 instance=ExtResource("3_sweqy")]
@@ -38,6 +49,13 @@ strafe = true
 
 [node name="MovementTurn" parent="XROrigin3D/RightController" unique_id=836667239 instance=ExtResource("3_2hs0m")]
 turn_mode = 2
+
+[node name="FunctionPointer" parent="XROrigin3D/RightController" unique_id=673923724 instance=ExtResource("5_1jxqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+show_laser = 2
+laser_length = 1
+
+[node name="FunctionPickup" parent="XROrigin3D/RightController" unique_id=161121909 instance=ExtResource("6_dw050")]
 
 [node name="PlayerBody" parent="XROrigin3D" unique_id=238746675 instance=ExtResource("6_2hs0m")]
 collision_layer = 524289
