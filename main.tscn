@@ -127,7 +127,7 @@ scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5240559, 1.8341289)
 scene = ExtResource("18_074og")
 transparent = 1
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("mineral_canvas_layer.gd")
 
 [node name="apatit" parent="." unique_id=237753180 instance=ExtResource("19_cegan")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.7114179, -0.07384649, 1.4713612)
@@ -135,3 +135,14 @@ visible = false
 
 [node name="PickableObject" parent="." unique_id=2123666810 instance=ExtResource("20_82xsv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6510749, -0.23741701, 1.8787416)
+
+[node name="point_mineral2_Viewport2Din3D" parent="." unique_id=1040247038 instance=ExtResource("6_272bh")]
+transform = Transform3D(0.03703419, 0, 1.3944126, 0, 0.062, 0, -0.03929973, 0, 1.3140279, 1.3860407, 0.64024603, 0.4622209)
+scene = ExtResource("17_074og")
+transparent = 1
+scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
+
+[connection signal="pointer_event" from="Viewport2Din3D12" to="." method="_on_viewport_2_din_3d_12_pointer_event"]
+[connection signal="pointer_event" from="Viewport2Din3D13" to="." method="_on_viewport_2_din_3d_13_pointer_event"]
+[connection signal="visibility_changed" from="Viewport2Din3D13" to="." method="_on_viewport_2_din_3d_13_visibility_changed"]
+[connection signal="pointer_event" from="point_mineral2_Viewport2Din3D" to="." method="_on_point_mineral_2_viewport_2_din_3d_pointer_event"]
