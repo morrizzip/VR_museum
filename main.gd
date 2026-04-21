@@ -121,9 +121,13 @@ extends Node3D
 @onready var viewport_2_din_3d_12: XRToolsViewport2DIn3D = $Viewport2Din3D12
 @onready var viewport_2_din_3d_13: XRToolsViewport2DIn3D = $Viewport2Din3D13
 @onready var pickable_object: XRToolsPickable = $PickableObject
+
 @onready var mineral_label_node: Label = viewport_2_din_3d_13.get_node("Viewport/CanvasLayer/Control/Label")
+@onready var mineral_label8_node: Label = viewport_2_din_3d_13.get_node("Viewport/CanvasLayer/Control/Label8")
+@onready var mineral_label6_node: Label = viewport_2_din_3d_13.get_node("Viewport/CanvasLayer/Control/Label6")
 
 var mineral_id = 0
+var vector_location_mineral = Vector3(-0.651, -0.237, 1.879)
 #var server_url = "http://192.168.1.10:5000"
 var server_url = "http://localhost:5000"
 var minerals_data = []
@@ -148,7 +152,7 @@ func _ready() -> void:
 	viewport2d_10.visible = false	
 	viewport2d_11.visible = false	
 	viewport_2_din_3d_12.visible = false	
-	viewport_2_din_3d_13.visible = true	
+	viewport_2_din_3d_13.visible = false 		
 	pickable_object.visible = false
 	
 	load_minerals_from_server()
@@ -185,8 +189,9 @@ func _on_minerals_loaded(result, response_code, headers, body):
 		load_local_minerals()
 
 func load_all_models():
-	for mineral in minerals_data:
-		download_model(mineral)
+	print("Данные минералов загружены. Готово к загрузке по запросу.")
+	#for mineral in minerals_data:
+		#download_model(mineral)
 
 func download_model(mineral):
 	var local_path = "user://models/" + mineral["model"]
@@ -245,7 +250,7 @@ func _on_model_downloaded(result, response_code, headers, body, mineral):
 			#print("Модель добавлена: ", mineral["name"])
 		#else:
 			#print("Не удалось загрузить сцену: ", model_path)
-			
+			#
 func load_model_to_scene(mineral):
 	var model_path = models_cache.get(mineral["id"])
 	if model_path and FileAccess.file_exists(model_path):
@@ -262,16 +267,25 @@ func load_model_to_scene(mineral):
 			
 			if err == OK:
 				var scene = gltf.generate_scene(state)
-				add_child(scene)
-				print("Модель добавлена: ", mineral["name"])
-				scene.position = Vector3(0, 0.524, 9.007) 
+				
+				var new_pickable = pickable_object.duplicate()
+				new_pickable.get_node("apatit").queue_free()
+				new_pickable.add_child(scene)
+		
+				#new_pickable.position = Vector3(-0.651, -0.237, 1.879)
+				new_pickable.position = vector_location_mineral
+				new_pickable.scale = Vector3(0.2, 0.2, 0.2)
+				new_pickable.visible = true
+				add_child(new_pickable)		
+				set_label_text(mineral)		
 			else:
 				print("Ошибка загрузки GLTF: ", err)
+		
 
 func load_local_minerals():
 	minerals_data = [
-		{"id": 1, "name": "Апатит", "description": "Описание апатита", "model": "apatit.glb", "num_shelf": 1, "num_position": 1},
-		{"id": 2, "name": "Кварц", "description": "Описание кварца", "model": "kvarts.glb", "num_shelf": 1, "num_position": 2}
+		{"id": 1, "name": "Апатит", "description": "Описание апатита", "model": "apatit.glb", "id_rack": 1, "num_shelf": 1, "num_position": 1},
+		{"id": 2, "name": "Кварц", "description": "Описание кварца", "model": "kvarts.glb", "id_rack": 2, "num_shelf": 1, "num_position": 2}
 	]
 	print("Загружены локальные данные")
 
@@ -280,6 +294,31 @@ func get_mineral_by_id(id):
 		if mineral["id"] == id:
 			return mineral
 	return null
+
+func get_mineral_by_location(rack_id: int, shelf: int, position: int):
+	for mineral in minerals_data:
+		if mineral["id_rack"] == rack_id and mineral["num_shelf"] == shelf and mineral["num_position"] == position:
+			return mineral
+	return null
+	
+func load_mineral_by_location(rack_id: int, shelf: int, position: int):
+	var mineralnew# = get_mineral_by_location(rack_id, shelf, position)
+	for mineral in minerals_data:
+		if mineral["id_rack"] == rack_id and mineral["num_shelf"] == shelf and mineral["num_position"] == position:
+			mineralnew = mineral
+	if mineralnew:
+		print("Загружаю минерал: ", mineralnew["name"])
+		var local_path = "user://models/" + mineralnew["model"]
+		
+		if FileAccess.file_exists(local_path):
+			print("Модель уже скачана: ", mineralnew["name"])
+			models_cache[mineralnew["id"]] = local_path
+			load_model_to_scene(mineralnew)
+		else:
+			print("Скачиваю модель: ", mineralnew["name"])
+			download_model(mineralnew)
+	else:
+		print("Минерал на стеллаже ", rack_id, ", полка ", shelf, ", позиция ", position, " не найден")
 
 func _process(delta: float) -> void:
 	pass
@@ -295,14 +334,20 @@ func change_panorama(new_path: String) -> void:
 		if sky_material is PanoramaSkyMaterial:
 			sky_material.panorama = texture
 
-func _on_viewport_2_din_3d_12_pointer_event(event: Variant) -> void:
-	#mineral_id = 1 
-	var mineral = get_mineral_by_id(1)
-	if mineral and mineral_label_node:
-		mineral_id = 1 #mineral_label_node.text = mineral["name"]
+func set_label_text(mineral):
+	mineral_label_node.text = mineral["name"]
+	#mineral_label8_node.text = mineral["name"] -- формулы пока нет
+	mineral_label6_node.text = mineral["description"]
 
+func _on_viewport_2_din_3d_12_pointer_event(event: Variant) -> void:
+	#var mineral = get_mineral_by_location(1, 2, 5)
+	#mineral.visible = true
+	#load_mineral_by_location(1, 2, 5)
+	#var mineral = get_mineral_by_id(1)
+	#if mineral and mineral_label_node:
+	mineral_id = 1
+	
 func _on_point_mineral_2_viewport_2_din_3d_pointer_event(event: Variant) -> void:
-	#mineral_id = 2
-	var mineral = get_mineral_by_id(2)
-	if mineral and mineral_label_node:
-		mineral_id = 2#mineral_label_node.text = mineral["name"]
+	#var mineral = get_mineral_by_id(2)
+	#if mineral and mineral_label_node:
+	mineral_id = 2

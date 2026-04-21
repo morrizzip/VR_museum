@@ -129,7 +129,7 @@ scene = ExtResource("18_074og")
 transparent = 1
 scene_properties_keys = PackedStringArray("mineral_canvas_layer.gd")
 
-[node name="apatit" parent="." unique_id=237753180 instance=ExtResource("19_cegan")]
+[node name="apatit2" parent="." unique_id=237753180 instance=ExtResource("19_cegan")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.7114179, -0.07384649, 1.4713612)
 visible = false
 

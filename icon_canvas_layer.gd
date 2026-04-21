@@ -34,7 +34,10 @@ func _on_button_point_pressed() -> void:
 		print("Нажата кнопка у Апатита")
 		viewport_2_din_3d_12.visible = false	
 		viewport_2_din_3d_13.visible = true	
-		pickable_object.visible = true
+		#main_node = Vecto
+		
 		#main_node.mineral_label_node.text = "Привет"
+		main_node.load_mineral_by_location(1, 2, 5)
+		pickable_object.visible = false		
 	if main_node.mineral_id == 2:
 		print("Нажата кнопка у Аметиста")	
