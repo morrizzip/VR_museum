@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://duhq0xnsbjemc" path="res://floor.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://brgejm2m8sgv4" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://ce711qwpmwssy" path="res://assets/GS__0863.JPG" id="2_yaehf"]
+[ext_resource type="Texture2D" uid="uid://cfv0ay8ungp82" path="res://assets/GS__0883.JPG" id="2_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://c4n2xq8dtxmur" path="res://player.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://brj4o3p46n13u" path="res://canvas_layer2.tscn" id="8_5vw27"]
@@ -20,9 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://dsxpem3m4yrax" path="res://mineral_canvas_layer.tscn" id="18_074og"]
 [ext_resource type="PackedScene" uid="uid://dvoynofls6gdu" path="res://assets/minerals/apatit.glb" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://c0y1ewpqaorec" path="res://pickable_object.tscn" id="20_82xsv"]
+[ext_resource type="PackedScene" uid="uid://c76oputiiawne" path="res://assets/models/panel3.glb" id="21_getpj"]
+[ext_resource type="PackedScene" uid="uid://cmg5idr0sk3bv" path="res://assets/models/panel4.glb" id="22_ryguw"]
+[ext_resource type="PackedScene" uid="uid://bgycie6myihp2" path="res://assets/models/panel_done3.glb" id="23_d13ii"]
+[ext_resource type="PackedScene" uid="uid://cxq7q8orxbpq6" path="res://assets/models/panel_done4.glb" id="24_1u8w0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2yge"]
-panorama = ExtResource("2_yaehf")
+panorama = ExtResource("2_1u8w0")
 
 [sub_resource type="Sky" id="Sky_ig7tw"]
 sky_material = SubResource("PanoramaSkyMaterial_h2yge")
@@ -44,6 +48,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="floor" parent="." unique_id=1844043432 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(2.2319636, 0, 0, 0, 1, 0, 0, 0, 2.105967, 0, 0, 0)
 visible = false
 
 [node name="StartXR" parent="." unique_id=385154755 instance=ExtResource("2_0xm2m")]
@@ -52,67 +57,68 @@ visible = false
 transform = Transform3D(-0.37793767, 0, 0.925831, 0, 1, 0, -0.925831, 0, -0.37793767, 0, 0.7, 0)
 
 [node name="Viewport2Din3D2" parent="." unique_id=1766897441 instance=ExtResource("6_272bh")]
-transform = Transform3D(-6.967546e-09, -0.20152098, -0.7071067, 0.22542405, -1.2457471e-08, 0, -6.967546e-09, -0.20152098, 0.7071067, -2.7649632, 0.33337224, 1.7850688)
+transform = Transform3D(-6.967546e-09, -0.20152098, -0.7071067, 0.22542405, -1.2457471e-08, 0, -6.967546e-09, -0.20152098, 0.7071067, -2.221, 0.333, 1.91)
 scene = ExtResource("8_5vw27")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_2.gd")
 
 [node name="Viewport2Din3D" parent="." unique_id=620575666 instance=ExtResource("6_272bh")]
-transform = Transform3D(-5.5501097e-09, -0.16083083, -0.82555676, 0.22499996, -1.24577415e-08, 2.8870955e-15, -8.119403e-09, -0.23528369, 0.56431884, -1.6956335, 0.70636284, 1.8554847)
+transform = Transform3D(-5.5501097e-09, -0.16083083, -0.82555676, 0.22499996, -1.24577415e-08, 2.8870955e-15, -8.119403e-09, -0.23528369, 0.56431884, -1.696, 0.333, 1.855)
 scene = ExtResource("8_kek77")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_3.gd")
 
 [node name="Viewport2Din3D3" parent="." unique_id=1253818542 instance=ExtResource("6_272bh")]
-transform = Transform3D(-9.8350625e-09, -0.285, 0, 0.225, -1.2457746e-08, 0, 0, 0, 1, 0.26799095, 0.6348716, -2.640942)
+transform = Transform3D(-9.8350625e-09, -0.285, 0, 0.225, -1.2457746e-08, 0, 0, 0, 1, 0.268, 0.333, -2.641)
 scene = ExtResource("9_kek77")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_4.gd")
 
 [node name="Viewport2Din3D4" parent="." unique_id=1491619812 instance=ExtResource("6_272bh")]
-transform = Transform3D(-5.5252842e-09, -0.16011147, -0.8272767, 0.22500001, -1.2457746e-08, 9.723933e-16, -8.136317e-09, -0.23577383, 0.5617947, 1.9770386, 0.60320413, -2.0374923)
+transform = Transform3D(-5.5252842e-09, -0.16011147, -0.8272767, 0.22500001, -1.2457746e-08, 9.723933e-16, -8.136317e-09, -0.23577383, 0.5617947, 1.977, 0.333, -2.037)
 scene = ExtResource("10_4c57u")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_5.gd")
 
 [node name="Viewport2Din3D5" parent="." unique_id=662948675 instance=ExtResource("6_272bh")]
-transform = Transform3D(-5.1592814e-09, -0.14950542, -0.8513609, 0.225, -1.2457746e-08, 0, -8.3731875e-09, -0.24263786, 0.5245804, 2.5436058, 0.5560374, -1.5961113)
+transform = Transform3D(-5.1592814e-09, -0.14950542, -0.8513609, 0.225, -1.2457746e-08, 0, -8.3731875e-09, -0.24263786, 0.5245804, 2.544, 0.333, -1.596)
 scene = ExtResource("11_efxa6")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_6.gd")
 
 [node name="Viewport2Din3D6" parent="." unique_id=935910570 instance=ExtResource("6_272bh")]
-transform = Transform3D(-1.7325159e-09, -0.050204754, 0.9843621, 0.225, -1.2457746e-08, -1.3930816e-15, 9.681263e-09, 0.2805432, 0.17615709, 2.9387484, 0.567859, 0.036247075)
+transform = Transform3D(-1.7325159e-09, -0.050204754, 0.9843621, 0.225, -1.2457746e-08, -1.3930816e-15, 9.681263e-09, 0.2805432, 0.17615709, 2.939, 0.333, 0.036)
 scene = ExtResource("12_dg77c")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_7.gd")
 
 [node name="Viewport2Din3D7" parent="." unique_id=2012797830 instance=ExtResource("6_272bh")]
-transform = Transform3D(-7.301405e-09, -0.21157978, -0.66997325, 0.225, -1.2457746e-08, 0, -6.5892287e-09, -0.19094238, 0.7423852, 1.9180794, 0.5818113, -1.5068451)
+transform = Transform3D(-7.301405e-09, -0.21157978, -0.66997325, 0.225, -1.2457746e-08, 0, -6.5892287e-09, -0.19094238, 0.7423852, 1.1460149, 0.333, -2.1949666)
 scene = ExtResource("13_ycdy4")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_8.gd")
 
 [node name="Viewport2Din3D8" parent="." unique_id=1948109490 instance=ExtResource("6_272bh")]
-transform = Transform3D(-2.3626578e-09, -0.06846498, 0.9707164, 0.22499998, -1.2457744e-08, 1.5143573e-16, 9.547055e-09, 0.27665415, 0.24022803, 2.1515846, 0.60713136, 0.14892754)
+transform = Transform3D(-2.3626578e-09, -0.06846498, 0.9707164, 0.22499998, -1.2457744e-08, 1.5143573e-16, 9.547055e-09, 0.27665415, 0.24022803, 2.152, 0.333, 0.149)
 scene = ExtResource("14_w48qg")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_9.gd")
 
 [node name="Viewport2Din3D9" parent="." unique_id=315047128 instance=ExtResource("6_272bh")]
-transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707164, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022801, 2.375293, 0.6201132, 0.22463775)
+transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707164, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022801, 2.375, 0.333, 0.225)
 scene = ExtResource("15_vivmo")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_10.gd")
 
 [node name="Viewport2Din3D10" parent="." unique_id=696647310 instance=ExtResource("6_272bh")]
-transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707165, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022803, 2.6713848, 0.520921, 0.28608024)
+transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707165, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022803, 2.671, 0.333, 0.47395563)
 scene = ExtResource("16_2cqfq")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
 
 [node name="Viewport2Din3D11" parent="." unique_id=1408770659 instance=ExtResource("6_272bh")]
-transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707165, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022803, 2.6713848, 0.520921, 0.28608024)
+transform = Transform3D(-2.3626576e-09, -0.06846499, 0.9707165, 0.225, -1.2457746e-08, 0, 9.5470565e-09, 0.27665418, 0.24022803, 2.671, 0.333, 0.286)
+visible = false
 scene = ExtResource("16_2cqfq")
 transparent = 1
 scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
@@ -124,25 +130,179 @@ transparent = 1
 scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
 
 [node name="Viewport2Din3D13" parent="." unique_id=1417665574 instance=ExtResource("6_272bh")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5240559, 1.8341289)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.7014739, 2.0212889)
 scene = ExtResource("18_074og")
 transparent = 1
 scene_properties_keys = PackedStringArray("mineral_canvas_layer.gd")
 
 [node name="apatit2" parent="." unique_id=237753180 instance=ExtResource("19_cegan")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.7114179, -0.07384649, 1.4713612)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.8827466, -0.4398315, 1.879)
 visible = false
 
 [node name="PickableObject" parent="." unique_id=2123666810 instance=ExtResource("20_82xsv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6510749, -0.23741701, 1.8787416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6510749, -0.23741701, 1.1084169)
 
 [node name="point_mineral2_Viewport2Din3D" parent="." unique_id=1040247038 instance=ExtResource("6_272bh")]
-transform = Transform3D(0.03703419, 0, 1.3944126, 0, 0.062, 0, -0.03929973, 0, 1.3140279, 1.3860407, 0.64024603, 0.4622209)
+transform = Transform3D(0.03703419, 0, 1.3944126, 0, 0.062, 0, -0.03929973, 0, 1.3140279, 0.99852407, 0.70217365, 0.37706327)
 scene = ExtResource("17_074og")
 transparent = 1
 scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
 
+[node name="panel3" parent="." unique_id=34168544 instance=ExtResource("21_getpj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.1115489, 0.6021458, 1.9090624)
+visible = false
+
+[node name="panel4_old" parent="." unique_id=1178829619 instance=ExtResource("22_ryguw")]
+transform = Transform3D(-4.371139e-08, 0, 0.9609877, 0, 0.945403, 0, -1, 0, -4.2006107e-08, -0.068833426, 0.6267899, 2.09616)
+visible = false
+
+[node name="arrow_12_Viewport2Din3D14" parent="." unique_id=800770227 instance=ExtResource("6_272bh")]
+transform = Transform3D(-6.461831e-09, -0.18725067, 0.75387305, 0.22499998, -1.2457744e-08, -2.2890034e-15, 7.414388e-09, 0.21485382, 0.65702003, -1.5962963, 0.333, -2.167121)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_13_Viewport2Din3D15" parent="." unique_id=2064355222 instance=ExtResource("6_272bh")]
+transform = Transform3D(-5.8044893e-09, -0.16820218, 0.8072696, 0.22500001, -1.2457748e-08, -3.6191173e-15, 7.939546e-09, 0.23007183, 0.59018314, 2.371746, 0.333, 0.71870625)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_14_Viewport2Din3D16" parent="." unique_id=1274271397 instance=ExtResource("6_272bh")]
+transform = Transform3D(-1.3539863e-09, -0.039235756, -0.9904783, 0.225, -1.2457745e-08, 2.2936473e-15, -9.741414e-09, -0.2822863, 0.13766932, -2.322, 0.333, 0.39)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_15_Viewport2Din3D17" parent="." unique_id=1382465943 instance=ExtResource("6_272bh")]
+transform = Transform3D(3.592742e-09, 0.104110315, -0.9308904, 0.22500007, -1.245775e-08, -3.2665538e-15, -9.155365e-09, -0.26530376, -0.36529943, -2.62, 0.333, 0)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_16_Viewport2Din3D18" parent="." unique_id=1647610079 instance=ExtResource("6_272bh")]
+transform = Transform3D(1.7130808e-09, 0.049641583, -0.9847136, 0.22499998, -1.2457745e-08, -1.4015527e-15, -9.684721e-09, -0.28064337, -0.17418094, -2.511, 0.333, -0.243)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_17_Viewport2Din3D19" parent="." unique_id=581919686 instance=ExtResource("6_272bh")]
+transform = Transform3D(5.46608e-10, 0.015839582, -0.99845433, 0.22500002, -1.2457748e-08, 0, -9.819863e-09, -0.28455952, -0.055577487, -2.288, 0.333, 0)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_18_Viewport2Din3D20" parent="." unique_id=1754294655 instance=ExtResource("6_272bh")]
+transform = Transform3D(-9.592219e-10, -0.027796289, -0.9952325, 0.225, -1.2457746e-08, 0, -9.788174e-09, -0.28364128, 0.09753084, -2.471, 0.333, -0.314)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_19_Viewport2Din3D21" parent="." unique_id=272882327 instance=ExtResource("6_272bh")]
+transform = Transform3D(-8.926457e-12, -0.00025867048, -0.9999996, 0.225, -1.2457746e-08, 0, -9.835058e-09, -0.28499988, 0.0009076157, -2.375, 0.333, 0)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_20_Viewport2Din3D22" parent="." unique_id=1343607707 instance=ExtResource("6_272bh")]
+transform = Transform3D(2.6593892e-09, 0.077063665, -0.9627483, 0.22499998, -1.2457745e-08, 0, -9.468689e-09, -0.27438328, -0.2703988, -2.398, 0.333, 0)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_21_Viewport2Din3D23" parent="." unique_id=301249462 instance=ExtResource("6_272bh")]
+transform = Transform3D(2.15232e-09, 0.062369823, -0.9757604, 0.225, -1.2457746e-08, -1.6678786e-15, -9.596666e-09, -0.27809173, -0.21884151, -2.263, 0.333, -0.296)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_22_Viewport2Din3D24" parent="." unique_id=1766111572 instance=ExtResource("6_272bh")]
+transform = Transform3D(4.181951e-10, 0.01211844, -0.99909556, 0.22499998, -1.2457744e-08, 1.0946485e-16, -9.826166e-09, -0.28474224, -0.042520836, -2.237, 0.333, -0.33)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_23_Viewport2Din3D25" parent="." unique_id=369018644 instance=ExtResource("6_272bh")]
+transform = Transform3D(-9.8350625e-09, -0.285, 0, 0.225, -1.2457746e-08, 0, 0, 0, 1, -1.323, 0.333, -1.711)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_24_Viewport2Din3D26" parent="." unique_id=1543981954 instance=ExtResource("6_272bh")]
+transform = Transform3D(1.7245732e-09, 0.049974605, -0.98450625, 0.22499998, -1.2457744e-08, 4.1458703e-17, -9.68268e-09, -0.28058428, -0.17534947, -2.238, 0.333, 0)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_back1_Viewport2Din3D" parent="." unique_id=288311078 instance=ExtResource("6_272bh")]
+transform = Transform3D(-5.904346e-09, -0.17109588, 0.7997474, 0.22500001, -1.2457747e-08, -6.1807986e-15, 7.865566e-09, 0.22792803, 0.60033643, -1.9297848, 0.333, -2.2764196)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_back2_Viewport2Din3D" parent="." unique_id=1893765827 instance=ExtResource("6_272bh")]
+transform = Transform3D(-8.502614e-09, -0.24638833, 0.5025976, 0.225, -1.2457745e-08, 4.325665e-16, 4.9430775e-09, 0.14324027, 0.8645205, -1.1386545, 0.333, -2.0656807)
+scene = ExtResource("16_2cqfq")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_11.gd")
+
+[node name="arrow_back3_Viewport2Din3D" parent="." unique_id=1126974328 instance=ExtResource("6_272bh")]
+transform = Transform3D(-9.070502e-09, -0.2628446, 0.3865661, 0.225, -1.2457746e-08, 0, 3.801902e-09, 0.11017134, 0.9222617, 1.0043814, 0.333, 2.235652)
+scene = ExtResource("8_5vw27")
+transparent = 1
+scene_properties_keys = PackedStringArray("canvas_layer_2.gd")
+
+[node name="panel_done3" parent="." unique_id=766884148 instance=ExtResource("23_d13ii")]
+transform = Transform3D(-4.371139e-08, 0, 0.961, 0, 0.945, 0, -1, 0, -4.2006643e-08, -0.63179636, 0.8372569, 2.0212889)
+visible = false
+
+[node name="panel4" parent="." unique_id=872497360 instance=ExtResource("24_1u8w0")]
+transform = Transform3D(-4.371139e-08, 0, 0.961, 0, 0.945, 0, -1, 0, -4.2006643e-08, 0.12152804, 0.627, 2.096)
+visible = false
+
+[node name="point_mineral3_Viewport2Din3D" parent="." unique_id=1750004534 instance=ExtResource("6_272bh")]
+transform = Transform3D(0.040253192, 0, 1.2771759, 0, 0.062000014, 0, -0.035995558, 0, 1.4282432, 0.81837344, 0.89458126, 0.7424766)
+scene = ExtResource("17_074og")
+transparent = 1
+scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
+
+[node name="point_mineral4_Viewport2Din3D" parent="." unique_id=886222172 instance=ExtResource("6_272bh")]
+transform = Transform3D(0.035635136, 0, 1.4395765, 0, 0.062, 0, -0.040572613, 0, 1.2643874, 1.0443615, 0.70472956, 0.53500396)
+scene = ExtResource("17_074og")
+transparent = 1
+scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
+
+[node name="point_mineral5_Viewport2Din3D" parent="." unique_id=1375572009 instance=ExtResource("6_272bh")]
+transform = Transform3D(0.04026701, 0, -1.2766273, 0, 0.062000006, 0, 0.03598011, 0, 1.4287333, -0.8683583, 0.93535006, 0.80339754)
+scene = ExtResource("17_074og")
+transparent = 1
+scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
+
+[node name="point_mineral6_Viewport2Din3D" parent="." unique_id=514464467 instance=ExtResource("6_272bh")]
+transform = Transform3D(0.048780505, 0, -0.8218095, 0, 0.06200002, 0, 0.02316165, 0, 1.7308049, -0.43731698, 0.955827, 1.044312)
+scene = ExtResource("17_074og")
+transparent = 1
+scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
+
+[connection signal="pointer_event" from="Viewport2Din3D10" to="." method="_on_arrow_10_viewport_2_din_3d_10_pointer_event"]
 [connection signal="pointer_event" from="Viewport2Din3D12" to="." method="_on_viewport_2_din_3d_12_pointer_event"]
 [connection signal="pointer_event" from="Viewport2Din3D13" to="." method="_on_viewport_2_din_3d_13_pointer_event"]
 [connection signal="visibility_changed" from="Viewport2Din3D13" to="." method="_on_viewport_2_din_3d_13_visibility_changed"]
 [connection signal="pointer_event" from="point_mineral2_Viewport2Din3D" to="." method="_on_point_mineral_2_viewport_2_din_3d_pointer_event"]
+[connection signal="pointer_event" from="arrow_12_Viewport2Din3D14" to="." method="_on_arrow_12_viewport_2_din_3d_14_pointer_event"]
+[connection signal="pointer_event" from="arrow_13_Viewport2Din3D15" to="." method="_on_arrow_13_viewport_2_din_3d_15_pointer_event"]
+[connection signal="pointer_event" from="arrow_14_Viewport2Din3D16" to="." method="_on_arrow_14_viewport_2_din_3d_16_pointer_event"]
+[connection signal="pointer_event" from="arrow_15_Viewport2Din3D17" to="." method="_on_arrow_15_viewport_2_din_3d_17_pointer_event"]
+[connection signal="pointer_event" from="arrow_16_Viewport2Din3D18" to="." method="_on_arrow_16_viewport_2_din_3d_18_pointer_event"]
+[connection signal="pointer_event" from="arrow_17_Viewport2Din3D19" to="." method="_on_arrow_17_viewport_2_din_3d_19_pointer_event"]
+[connection signal="pointer_event" from="arrow_18_Viewport2Din3D20" to="." method="_on_arrow_18_viewport_2_din_3d_20_pointer_event"]
+[connection signal="pointer_event" from="arrow_19_Viewport2Din3D21" to="." method="_on_arrow_19_viewport_2_din_3d_21_pointer_event"]
+[connection signal="pointer_event" from="arrow_20_Viewport2Din3D22" to="." method="_on_arrow_20_viewport_2_din_3d_22_pointer_event"]
+[connection signal="pointer_event" from="arrow_21_Viewport2Din3D23" to="." method="_on_arrow_21_viewport_2_din_3d_23_pointer_event"]
+[connection signal="pointer_event" from="arrow_22_Viewport2Din3D24" to="." method="_on_arrow_22_viewport_2_din_3d_24_pointer_event"]
+[connection signal="pointer_event" from="arrow_23_Viewport2Din3D25" to="." method="_on_arrow_23_viewport_2_din_3d_25_pointer_event"]
+[connection signal="pointer_event" from="arrow_24_Viewport2Din3D26" to="." method="_on_arrow_24_viewport_2_din_3d_26_pointer_event"]
+[connection signal="pointer_event" from="arrow_back1_Viewport2Din3D" to="." method="_on_arrow_back_1_viewport_2_din_3d_pointer_event"]
+[connection signal="pointer_event" from="arrow_back2_Viewport2Din3D" to="." method="_on_arrow_back_2_viewport_2_din_3d_pointer_event"]
+[connection signal="pointer_event" from="point_mineral5_Viewport2Din3D" to="." method="_on_point_mineral_5_viewport_2_din_3d_pointer_event"]
+[connection signal="pointer_event" from="point_mineral6_Viewport2Din3D" to="." method="_on_point_mineral_6_viewport_2_din_3d_pointer_event"]

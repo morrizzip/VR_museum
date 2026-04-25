@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var viewport2d_3: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D3")
 @onready var viewport2d_4: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D4")
 
+@onready var arrow_back3_Viewport2Din3D: XRToolsViewport2DIn3D = get_node("/root/main/arrow_back3_Viewport2Din3D")
+
 @onready var player: Node3D = get_node("/root/main/player") 
 @onready var player_camera: XRCamera3D = player.get_node("XROrigin3D/XRCamera3D") 
 @onready var player_hand_left: XRController3D = player.get_node("XROrigin3D/LeftController") 
@@ -39,7 +41,7 @@ func _on_button_hotspot3_pressed() -> void:
 	viewport2d_2.visible = false
 	viewport2d_3.visible = false
 	viewport2d_4.visible = true
-	
+	arrow_back3_Viewport2Din3D.visible = false
 	
 	# Восстанавливаем поворот
 	player_camera.rotation.y = player_rotation

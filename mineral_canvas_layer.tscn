@@ -78,7 +78,7 @@ font_size = 10
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_l7q2i"]
-font_size = 14
+font_size = 15
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4xub4"]
@@ -100,7 +100,7 @@ anchor_bottom = 0.5
 offset_left = -157.0
 offset_top = -149.0
 offset_right = 144.5
-offset_bottom = 108.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -108,8 +108,9 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 7.0
 offset_top = -15.0
-offset_right = 283.0
+offset_right = 314.0
 offset_bottom = 135.0
+color = Color(1, 1, 1, 0)
 
 [node name="Label" type="Label" parent="Control" unique_id=1300627162]
 layout_mode = 0
@@ -117,17 +118,15 @@ offset_left = 8.0
 offset_top = 42.0
 offset_right = 167.0
 offset_bottom = 83.0
-text = "аааа"
+text = "Название минерала"
 label_settings = SubResource("LabelSettings_bvar3")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="Control" unique_id=2034386345]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 85.0
-offset_right = 161.0
-offset_bottom = 108.0
+offset_left = -399.0
+offset_top = -10.0
+offset_right = -242.0
+offset_bottom = 13.0
 text = "Формула минерала  "
 label_settings = SubResource("LabelSettings_vsouc")
 horizontal_alignment = 1
@@ -135,10 +134,10 @@ vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="Control" unique_id=658964057]
 layout_mode = 0
-offset_left = 157.0
-offset_top = 89.0
-offset_right = 226.0
-offset_bottom = 132.0
+offset_left = -246.0
+offset_top = -6.0
+offset_right = -177.0
+offset_bottom = 37.0
 text = "Ca₅(PO₄)₃F
 "
 label_settings = SubResource("LabelSettings_xef33")
@@ -149,6 +148,7 @@ offset_left = 7.0
 offset_top = 133.0
 offset_right = 157.5
 offset_bottom = 249.0
+color = Color(1, 1, 1, 0)
 
 [node name="ColorRect3" type="ColorRect" parent="Control" unique_id=1658069955]
 layout_mode = 0
@@ -156,6 +156,7 @@ offset_left = 275.5
 offset_top = 118.0
 offset_right = 282.5
 offset_bottom = 249.0
+color = Color(1, 1, 1, 0)
 
 [node name="ColorRect4" type="ColorRect" parent="Control" unique_id=624701388]
 layout_mode = 0
@@ -164,6 +165,7 @@ offset_top = 242.0
 offset_right = 283.46936
 offset_bottom = 360.6748
 rotation = 1.5707964
+color = Color(1, 1, 1, 0)
 
 [node name="Label9" type="Label" parent="Control" unique_id=1995729879]
 layout_mode = 0
@@ -239,12 +241,11 @@ autowrap_mode = 3
 [node name="Label6" type="Label" parent="Control" unique_id=1238512823]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 122.0
+offset_top = 134.0
 offset_right = 153.0
-offset_bottom = 245.0
-text = "аааааа"
+offset_bottom = 257.0
+text = "Описание"
 label_settings = SubResource("LabelSettings_4xub4")
-vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=1621115908]
@@ -255,3 +256,13 @@ offset_right = 1022.0
 offset_bottom = 320.0
 texture = ExtResource("1_bvar3")
 expand_mode = 1
+
+[node name="Button" type="Button" parent="Control" unique_id=1790361336]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 29.0
+offset_right = 316.0
+offset_bottom = 63.0
+expand_icon = true
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_close_pressed"]

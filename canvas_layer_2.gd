@@ -2,7 +2,16 @@ extends CanvasLayer
 @onready var world_env: WorldEnvironment = get_node("/root/main/WorldEnvironment") # путь к узлу окружения
 @onready var viewport2d_1: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D2") # путь к узлу viewport2d_1
 @onready var viewport2d_2: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D")
+@onready var arrow_12_viewport2d_14: XRToolsViewport2DIn3D = get_node("/root/main/arrow_12_Viewport2Din3D14")
+@onready var viewport2d_3: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D3")
 
+#arrows_back
+@onready var arrow_back2_Viewport2Din3D: XRToolsViewport2DIn3D = get_node("/root/main/arrow_back2_Viewport2Din3D")
+@onready var arrow_back3_Viewport2Din3D: XRToolsViewport2DIn3D = get_node("/root/main/arrow_back3_Viewport2Din3D")
+
+#points
+@onready var point_mineral3_Viewport2Din3D: XRToolsViewport2DIn3D = get_node("/root/main/point_mineral3_Viewport2Din3D")
+@onready var point_mineral4_Viewport2Din3D: XRToolsViewport2DIn3D = get_node("/root/main/point_mineral4_Viewport2Din3D")
 
 @onready var player: Node3D = get_node("/root/main/player") 
 @onready var player_camera: XRCamera3D = player.get_node("XROrigin3D/XRCamera3D") 
@@ -26,8 +35,9 @@ func _on_button_hotspot1_pressed() -> void:
 	#viewport2d_1.visible = false
 	#player.rotation.y = player_rotation
 	# Сохраняем текущий поворот
-	var player_rotation = player.rotation.y
+	var player_rotation = player_camera.rotation.y
 	#print("Поворот до изменения: ", player_rotation)
+	
 	
 	# Меняем панораму
 	change_panorama("res://assets/GS__0857.JPG")
@@ -36,9 +46,15 @@ func _on_button_hotspot1_pressed() -> void:
 	# Скрываем Viewport
 	viewport2d_1.visible = false
 	viewport2d_2.visible = true
+	arrow_12_viewport2d_14.visible = false
+	arrow_back2_Viewport2Din3D.visible = true
+	arrow_back3_Viewport2Din3D.visible = false
+	viewport2d_3.visible = false
+	#point_mineral3_Viewport2Din3D.visible = true
+	#point_mineral4_Viewport2Din3D.visible = true
 	
 	# Восстанавливаем поворот
-	#player_camera.rotation.y = player_rotation
+	player_camera.rotation.y = player_rotation
 	#print("Поворот после восстановления: ", player_camera.rotation.y)
 	#player.rotation.y = player_rotation
 	#player_hand_left.rotation.y = player_rotation

@@ -8,9 +8,16 @@ extends CanvasLayer
 @onready var viewport2d_6: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D6")
 @onready var viewport2d_7: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D7")
 
-@onready var viewport2d_12: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D12")
+@onready var arrow_back1_Viewport2Din3D: XRToolsViewport2DIn3D = get_node("/root/main/arrow_back1_Viewport2Din3D")
+
+
+#points
+@onready var point_mineral_1_viewport2d_12: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D12")
+@onready var point_mineral_2_viewport_2_din_3d: XRToolsViewport2DIn3D = get_node("/root/main/point_mineral2_Viewport2Din3D")
+
 @onready var viewport_2_din_3d_13: XRToolsViewport2DIn3D = get_node("/root/main/Viewport2Din3D13")
 @onready var pickable_object: XRToolsPickable = get_node("/root/main/PickableObject")
+
 
 
 @onready var player: Node3D = get_node("/root/main/player") 
@@ -51,10 +58,13 @@ func _on_button_hotspot6_pressed() -> void:
 	viewport2d_6.visible = false	
 	viewport2d_7.visible = true	
 	
-	viewport2d_12.visible = false	
+	point_mineral_1_viewport2d_12.visible = false
+	point_mineral_2_viewport_2_din_3d.visible = false
+	
 	viewport_2_din_3d_13.visible = false	
 	pickable_object.visible = false	
 	
+	arrow_back1_Viewport2Din3D.visible = false
 	
 	# Восстанавливаем поворот
 	player_camera.rotation.y = player_rotation
