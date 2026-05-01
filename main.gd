@@ -47,6 +47,10 @@ extends Node3D
 @onready var mineral_label8_node: Label = viewport_2_din_3d_13.get_node("Viewport/CanvasLayer/Control/Label8")
 @onready var mineral_label6_node: Label = viewport_2_din_3d_13.get_node("Viewport/CanvasLayer/Control/Label6")
 
+
+@onready var load_line: Node3D = $load_line
+@onready var load_animation: AnimationPlayer = load_line.get_node("AnimationPlayer")
+
 #@onready var icon_canvas: CanvasLayer = viewport_2_din_3d_12.get_node("Viewport/CanvasLayer")
 
 var mineral_id = 0
@@ -67,7 +71,7 @@ var rotation_amplitude = 0.3
 var rotation_time = 0.0
 
 var is_picked = false
-
+var check_ready_load = false
 #func _process(delta: float) -> void:
 	#if current_pickable and current_pickable.get_meta("rotate_anim", false):
 		#rotation_time += delta
@@ -153,6 +157,7 @@ func _on_minerals_loaded(result, response_code, headers, body):
 		load_local_minerals()
 
 func load_all_models():
+	check_ready_load = true
 	print("Данные минералов загружены. Готово к загрузке по запросу.")
 	#for mineral in minerals_data:
 		#download_model(mineral)
@@ -173,6 +178,9 @@ func download_model(mineral):
 	
 	var url = server_url + "/download/" + str(int(mineral["id"]))
 	var error = http_request.request(url)
+	
+	load_line.visible = true
+	load_animation.play("load_animation")
 	
 	if error != OK:
 		print("Ошибка скачивания модели: ", mineral["name"])
@@ -258,7 +266,13 @@ func load_model_to_scene(mineral):
 				new_pickable.visible = true
 				add_child(new_pickable)		
 				current_pickable = new_pickable
-				set_label_text(mineral)		
+				set_label_text(mineral)
+				
+				load_line.visible = false
+				load_animation.stop()
+				#отображаем панель с текстом 
+				viewport_2_din_3d_13.visible = true	
+				panel_4.visible = true	
 			else:
 				print("Ошибка загрузки GLTF: ", err)
 		

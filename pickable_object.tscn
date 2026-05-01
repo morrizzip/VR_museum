@@ -10,6 +10,7 @@ size = Vector3(0.72857666, 0.90319824, 0.70373535)
 size = Vector3(1, 1.0439453, 1)
 
 [node name="PickableObject" unique_id=2123666810 instance=ExtResource("1_m1xbq")]
+collision_layer = 5
 freeze = true
 freeze_mode = 0
 

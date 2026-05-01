@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://du2mr1sj75ve2"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_mfxds"]
+[ext_resource type="PackedScene" uid="uid://dh1lte25sjyj6" path="res://assets/minerals/ftorapatit/ftorapatit_2Part.glb" id="2_uk61u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfxds"]
+size = Vector3(0.343, 0.42516893, 0.187)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uk61u"]
+size = Vector3(0.36751464, 0.44506836, 0.24131055)
+
+[node name="apatit_second_part" unique_id=1539778836 instance=ExtResource("1_mfxds")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.008118659, 0)
+shape = SubResource("BoxShape3D_mfxds")
+
+[node name="ftorapatit_2Part" parent="CollisionShape3D" index="0" unique_id=1574360616 instance=ExtResource("2_uk61u")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.004205346, -0.18948738, 0.070330024)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=961414123]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=531603042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0029321462, -0.010375977, -4.980713e-05)
+shape = SubResource("BoxShape3D_uk61u")

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://0j0rh1lmld5x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nl2tc"]
+albedo_color = Color(0.77168405, 0.77168405, 0.7716839, 1)
+emission_enabled = true
+emission = Color(0.2789908, 0.27899083, 0.27899083, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_052mj"]
+albedo_color = Color(0.3726042, 0.6639548, 9.62615e-07, 1)
+emission_enabled = true
+emission = Color(0, 0.549889, 0, 1)
+
+[sub_resource type="Animation" id="Animation_052mj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.86341965, -4.645437e-05, 0.00014160108)]
+}
+
+[sub_resource type="Animation" id="Animation_nl2tc"]
+resource_name = "load_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.86341965, -4.645437e-05, 0.00014160108), Vector3(-0.8663521, -4.645437e-05, 0.00014160108)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_052mj"]
+_data = {
+&"RESET": SubResource("Animation_052mj"),
+&"load_animation": SubResource("Animation_nl2tc")
+}
+
+[node name="load_line" type="Node3D" unique_id=557718279]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=91038744]
+size = Vector3(1.8930664, 0.07543945, 0.060058594)
+material = SubResource("StandardMaterial3D_nl2tc")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=2028344380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86341965, -4.645437e-05, 0.00014160108)
+size = Vector3(0.15806448, 0.07026367, 0.06194336)
+material = SubResource("StandardMaterial3D_052mj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2096257154]
+libraries/ = SubResource("AnimationLibrary_052mj")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="VRMuseum"
-run/main_scene="uid://ddblxno68xji5"
+run/main_scene="uid://b4flsx2mxh01g"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

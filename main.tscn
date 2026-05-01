@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cmg5idr0sk3bv" path="res://assets/models/panel4.glb" id="22_ryguw"]
 [ext_resource type="PackedScene" uid="uid://bgycie6myihp2" path="res://assets/models/panel_done3.glb" id="23_d13ii"]
 [ext_resource type="PackedScene" uid="uid://cxq7q8orxbpq6" path="res://assets/models/panel_done4.glb" id="24_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://0j0rh1lmld5x" path="res://load_line.tscn" id="25_0odxb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2yge"]
 panorama = ExtResource("2_1u8w0")
@@ -258,7 +259,6 @@ visible = false
 
 [node name="panel4" parent="." unique_id=872497360 instance=ExtResource("24_1u8w0")]
 transform = Transform3D(-4.371139e-08, 0, 0.961, 0, 0.945, 0, -1, 0, -4.2006643e-08, 0.12152804, 0.627, 2.096)
-visible = false
 
 [node name="point_mineral3_Viewport2Din3D" parent="." unique_id=1750004534 instance=ExtResource("6_272bh")]
 transform = Transform3D(0.040253192, 0, 1.2771759, 0, 0.062000014, 0, -0.035995558, 0, 1.4282432, 0.81837344, 0.89458126, 0.7424766)
@@ -283,6 +283,10 @@ transform = Transform3D(0.048780505, 0, -0.8218095, 0, 0.06200002, 0, 0.02316165
 scene = ExtResource("17_074og")
 transparent = 1
 scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
+
+[node name="load_line" parent="." unique_id=557718279 instance=ExtResource("25_0odxb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1162295, 1.8722377)
+visible = false
 
 [connection signal="pointer_event" from="Viewport2Din3D10" to="." method="_on_arrow_10_viewport_2_din_3d_10_pointer_event"]
 [connection signal="pointer_event" from="Viewport2Din3D12" to="." method="_on_viewport_2_din_3d_12_pointer_event"]
