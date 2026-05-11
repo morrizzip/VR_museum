@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://decske64wpw6e"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_nlk4v"]
+[ext_resource type="PackedScene" uid="uid://bibod51gr00k7" path="res://assets/models/breakable_glass_bottle.glb" id="2_vgtds"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yoabj"]
+size = Vector3(0.25048828, 0.5324707, 0.20715332)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esabl"]
+size = Vector3(0.28564453, 0.5586548, 0.2397461)
+
+[node name="bottle_pick" unique_id=1850896899 instance=ExtResource("1_nlk4v")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004333496, -0.0011755824, 0.0077368617)
+shape = SubResource("BoxShape3D_yoabj")
+
+[node name="bottle" parent="CollisionShape3D" index="0" unique_id=87595013 instance=ExtResource("2_vgtds")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="bottle_acid_area" type="Area3D" parent="." index="1" unique_id=1821376982]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bottle_acid_area" index="0" unique_id=761916305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031738281, 3.0517578e-05, 0.009521484)
+shape = SubResource("BoxShape3D_esabl")

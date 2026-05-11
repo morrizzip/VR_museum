@@ -2,10 +2,21 @@
 
 [ext_resource type="Script" uid="uid://mqgha08hr3hj" path="res://mineral_cut.gd" id="1_7mkq7"]
 [ext_resource type="PackedScene" uid="uid://duhq0xnsbjemc" path="res://floor.tscn" id="1_jm56t"]
-[ext_resource type="PackedScene" uid="uid://c4n2xq8dtxmur" path="res://player.tscn" id="2_p1jq1"]
 [ext_resource type="PackedScene" uid="uid://cwbg64srxtcc6" path="res://apatit_first_part.tscn" id="3_p1jq1"]
 [ext_resource type="PackedScene" uid="uid://du2mr1sj75ve2" path="res://apatit_second_part.tscn" id="4_oss43"]
 [ext_resource type="PackedScene" uid="uid://c3rxnvpq2fvri" path="res://ftorapatit_pick.tscn" id="5_x5vli"]
+[ext_resource type="PackedScene" uid="uid://webav5t5y22i" path="res://assets/models/crepl_for_tube4.glb" id="10_3i2ig"]
+[ext_resource type="PackedScene" uid="uid://cms2bqjsqvq7k" path="res://assets/models/saw_disk4.glb" id="10_urh80"]
+[ext_resource type="PackedScene" uid="uid://ddh3nresna36r" path="res://assets/models/water_tube4.glb" id="11_3hjra"]
+[ext_resource type="PackedScene" uid="uid://5ji6vgfp6uyx" path="res://assets/models/water_drop.glb" id="12_3hjra"]
+[ext_resource type="PackedScene" uid="uid://djycfsked1jn8" path="res://assets/models/water_tube3.glb" id="12_sdqxo"]
+[ext_resource type="PackedScene" uid="uid://bbgep74ai7j7b" path="res://assets/models/crepl_for_tube3.glb" id="13_r11ev"]
+[ext_resource type="PackedScene" uid="uid://dj378ll28ebnh" path="res://assets/models/backet.glb" id="13_sdqxo"]
+[ext_resource type="PackedScene" uid="uid://bh454fqvqs13r" path="res://player_2.tscn" id="13_urh80"]
+[ext_resource type="PackedScene" uid="uid://bibod51gr00k7" path="res://assets/models/breakable_glass_bottle.glb" id="14_sdqxo"]
+[ext_resource type="PackedScene" uid="uid://dia7bewj882qy" path="res://fluorite_pick.tscn" id="15_r11ev"]
+[ext_resource type="PackedScene" uid="uid://decske64wpw6e" path="res://bottle_pick.tscn" id="16_lqdpk"]
+[ext_resource type="PackedScene" uid="uid://cgvncqpxmoow4" path="res://assets/minerals/fluorite/calcit2.glb" id="16_vlybq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mkq7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -39,31 +50,132 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, -1.5707964)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("saw_disk4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("water_drop3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.241946, 1.9294313, 2.1323912)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("water_drop:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.1867037, 1.914102, 2.1323912)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("water_drop2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.1440597, 1.942125, 2.1323912)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("water_drop4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.2083144, 1.942125, 2.1323912)]
+}
 
-[sub_resource type="Animation" id="Animation_x5vli"]
-resource_name = "pila_animation"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_3hjra"]
+resource_name = "water_drop_animation"
+length = 2.3333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CSGCylinder3D:rotation")
+tracks/0/path = NodePath("water_drop3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, -1.5707964), Vector3(3.1415927, 0, -1.5707964)]
+"values": [Vector3(4.242, 1.821, 2.132), Vector3(4.241946, 1.4543442, 2.1323912)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("water_drop:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8333333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.187, 1.827, 2.132), Vector3(4.1867037, 1.4477708, 2.1323912)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("water_drop2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.46666667, 1.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.144, 1.824, 2.132), Vector3(4.1440597, 1.4529134, 2.1323912)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("water_drop4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.24, 2.1666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.208, 1.822, 2.132), Vector3(4.2083144, 1.453606, 2.1323912)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7mkq7"]
 _data = {
 &"RESET": SubResource("Animation_oss43"),
-&"pila_animation": SubResource("Animation_x5vli")
+&"water_drop_animation": SubResource("Animation_3hjra")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w81kf"]
-size = Vector3(1, 0.666626, 1.7421875)
+size = Vector3(1.5545654, 0.666626, 1.7050781)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hjra"]
+size = Vector3(0.92230225, 1, 1.4072266)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urh80"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w81kf"]
 albedo_color = Color(0.57816607, 0.45330012, 0.36062592, 1)
@@ -83,6 +195,61 @@ albedo_color = Color(0.5764706, 0.45490196, 0.36078432, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3i2ig"]
 albedo_color = Color(0.5764706, 0.45490196, 0.36078432, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3hjra"]
+radius = 1.6853956
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_urh80"]
+radius = 1.888809
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sdqxo"]
+radius = 1.6443199
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r11ev"]
+radius = 1.6469265
+
+[sub_resource type="Animation" id="Animation_urh80"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("saw_disk4:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sdqxo"]
+resource_name = "pila_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("saw_disk4:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, -1.5707964, -6.1086526)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r11ev"]
+_data = {
+&"RESET": SubResource("Animation_urh80"),
+&"pila_animation": SubResource("Animation_sdqxo")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdqxo"]
+size = Vector3(0.2310791, 0.23809814, 0.21246338)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vlybq"]
+size = Vector3(1.9443665, 5.0058594, 1.9324341)
+
 [node name="mineral_cut" type="Node3D" unique_id=466610117]
 script = ExtResource("1_7mkq7")
 
@@ -93,11 +260,9 @@ environment = SubResource("Environment_h0ako")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="player" parent="." unique_id=103094377 instance=ExtResource("2_p1jq1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.035327, 2.8214822)
-
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=417743546]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 4.2201967, 1.4873794, 1.6919985)
+visible = false
 radius = 0.44335938
 height = 0.03527832
 sides = 52
@@ -105,7 +270,6 @@ material = SubResource("StandardMaterial3D_7mkq7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=664991569]
 libraries/ = SubResource("AnimationLibrary_7mkq7")
-autoplay = &"pila_animation"
 
 [node name="apatit_first_part" parent="." unique_id=647545588 instance=ExtResource("3_p1jq1")]
 transform = Transform3D(-4.3711395e-08, 2.5175948e-11, -1, -0.0005759586, 0.9999998, 5.0351896e-11, 0.9999998, 0.0005759586, -4.3711374e-08, 4.0809402, 1.7786334, 1.7250963)
@@ -116,90 +280,219 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.32
 visible = false
 
 [node name="ftorapatit_pick" parent="." unique_id=480965856 instance=ExtResource("5_x5vli")]
-transform = Transform3D(0.12306456, 0, -0.99239874, 0, 1, 0, 0.99239874, 0, 0.12306456, 1.5180503, 1.3941973, 0.32762104)
+transform = Transform3D(-0.12178263, 0, 0.99255687, 0, 1, 0, -0.99255687, 0, -0.12178263, 2.0081973, 1.2917087, 4.5321465)
 
 [node name="floor" parent="." unique_id=1844043432 instance=ExtResource("1_jm56t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2943158, -0.8058437, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1653766684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2583666, 1.1601889, 1.6902077)
-size = Vector3(0.93905735, 0.5782471, 1.6904297)
+[node name="Table2" type="CSGBox3D" parent="." unique_id=1653766684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.251786, 1.1601889, 1.6902077)
+size = Vector3(1.6401598, 0.5782471, 1.6904297)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" unique_id=2027815436]
+[node name="StaticBody3D" type="StaticBody3D" parent="Table2" unique_id=2027815436]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D" unique_id=571091138]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.024841309, 0.0068359375)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2/StaticBody3D" unique_id=571091138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004272461, -0.024841309, -0.01171875)
 shape = SubResource("BoxShape3D_w81kf")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1599933042]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8466046, 0.39338714, 2.4379444)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table2_2" type="CSGBox3D" parent="Table2" unique_id=1599933042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75328946, -1.242754, 0.7477367)
+size = Vector3(0.10775757, 1.9519043, 0.12145996)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1414723725]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.663091, 0.39338714, 2.4379444)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table2_3" type="CSGBox3D" parent="Table2" unique_id=1414723725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72663975, -1.2284718, 0.7477367)
+size = Vector3(0.10775757, 1.9233398, 0.12145996)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1640329170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.663091, 0.39338714, 0.9324572)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table2_4" type="CSGBox3D" parent="Table2" unique_id=1640329170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72663975, -1.2476368, -0.7577505)
+size = Vector3(0.10775757, 1.9616699, 0.12145996)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=862387542]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8459537, 0.39338714, 0.9324572)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table2_5" type="CSGBox3D" parent="Table2" unique_id=862387542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75394034, -1.2560596, -0.7577505)
+size = Vector3(0.10775757, 1.9785156, 0.12145996)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=513637073]
-transform = Transform3D(0.0026005507, 0, -0.9999966, 0, 1, 0, 0.9999966, 0, 0.0026005507, 1.5466464, 0.9768393, 0.33404404)
+[node name="Area3D" type="Area3D" parent="Table2" unique_id=1327481534]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table2/Area3D" unique_id=807208479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034820557, -0.18970513, 0.00048828125)
+shape = SubResource("BoxShape3D_3hjra")
+
+[node name="Table3" type="CSGBox3D" parent="." unique_id=341638497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84600806, 1.1601889, 1.6902077)
+size = Vector3(1.6401598, 0.5782471, 1.6904297)
+material = SubResource("StandardMaterial3D_urh80")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Table3" unique_id=1912387328]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table3/StaticBody3D" unique_id=30396289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004272461, -0.024841309, -0.01171875)
+shape = SubResource("BoxShape3D_w81kf")
+
+[node name="Table2_2" type="CSGBox3D" parent="Table3" unique_id=437543274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75328946, -1.2492237, 0.7477367)
+size = Vector3(0.10775757, 1.9648438, 0.12145996)
+
+[node name="Table2_3" type="CSGBox3D" parent="Table3" unique_id=774666341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72663975, -1.2436085, 0.7477367)
+size = Vector3(0.10775757, 1.9536133, 0.12145996)
+
+[node name="Table2_4" type="CSGBox3D" parent="Table3" unique_id=1882521401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72663975, -1.246294, -0.7577505)
+size = Vector3(0.10775757, 1.9589844, 0.12145996)
+
+[node name="Table2_5" type="CSGBox3D" parent="Table3" unique_id=1916690063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75394034, -1.254839, -0.7577505)
+size = Vector3(0.10775757, 1.9760742, 0.12145996)
+
+[node name="Table1" type="CSGBox3D" parent="." unique_id=513637073]
+transform = Transform3D(-0.0013089078, 0, 0.9999991, 0, 1, 0, -0.9999991, 0, -0.0013089078, 1.9796097, 0.9768393, 4.5256863)
 size = Vector3(0.93905735, 0.21154785, 1.6904297)
 material = SubResource("StandardMaterial3D_w81kf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D6" unique_id=584295521]
+[node name="StaticBody3D" type="StaticBody3D" parent="Table1" unique_id=584295521]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D6/StaticBody3D" unique_id=1003101463]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table1/StaticBody3D" unique_id=1003101463]
 transform = Transform3D(1.0000035, 0, 1.816079e-08, 0, 1, 0, -1.816079e-08, 0, 1.0000035, 8.940697e-08, 6.1035156e-05, 0.00012207031)
 shape = SubResource("BoxShape3D_7mkq7")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1908868977]
-transform = Transform3D(0.0026005507, 0, -0.9999966, 0, 1, 0, 0.9999966, 0, 0.0026005507, 0.8022249, 0.39338714, -0.068965614)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table1_2" type="CSGBox3D" parent="Table1" unique_id=1908868977]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.40494394, -1.0559864, 0.7433709)
+size = Vector3(0.10775757, 1.9450684, 0.12145996)
 material = SubResource("StandardMaterial3D_h0ako")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=1849460411]
-transform = Transform3D(0.0026005507, 0, -0.9999966, 0, 1, 0, 0.9999966, 0, 0.0026005507, 0.80434823, 0.39338714, 0.7475183)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table1_3" type="CSGBox3D" parent="Table1" unique_id=1849460411]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.41154623, -1.0597401, 0.7433709)
+size = Vector3(0.10775757, 1.9525757, 0.12145996)
 material = SubResource("StandardMaterial3D_1h2ms")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=362558344]
-transform = Transform3D(0.0026005507, 0, -0.9999966, 0, 1, 0, 0.9999966, 0, 0.0026005507, 2.3098302, 0.39338714, 0.7436031)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table1_4" type="CSGBox3D" parent="Table1" unique_id=362558344]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.41154242, -1.0582218, -0.7621162)
+size = Vector3(0.10775757, 1.9495392, 0.12145996)
 material = SubResource("StandardMaterial3D_0xb5x")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1324664337]
-transform = Transform3D(0.0026005507, 0, -0.9999966, 0, 1, 0, 0.9999966, 0, 0.0026005507, 2.3077054, 0.39338714, -0.07353157)
-size = Vector3(0.10775757, 1, 0.12145996)
+[node name="Table1_5" type="CSGBox3D" parent="Table1" unique_id=1324664337]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.40558767, -1.0563068, -0.76211643)
+size = Vector3(0.10775757, 1.9457092, 0.12145996)
 material = SubResource("StandardMaterial3D_3i2ig")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=565261944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9507325, 4.6416254, 0.22520447)
+visible = false
 size = Vector3(0.49853516, 9.296326, 19.46585)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=1041058837]
 transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 2.904309, 9.040375, 0.22520447)
+visible = false
 size = Vector3(0.49853516, 13.901474, 19.46585)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1178750724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.631887, 4.6416254, 0.2662201)
+visible = false
 size = Vector3(0.49853516, 9.296326, 19.38382)
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="." unique_id=829015043]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8434238, 4.6416254, 9.819475)
+visible = false
 size = Vector3(0.49853516, 9.296326, 14.056282)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=1471800892]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.9106274, 4.6416254, -9.295153)
-size = Vector3(0.49853516, 9.296326, 13.817642)
+transform = Transform3D(-4.371139e-08, 0, -1.3754973, 0, 1, 0, 1, 0, -6.01249e-08, 2.9106274, 3.7833338, 0.09835076)
+size = Vector3(0.49853516, 11.012909, 13.817642)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1387910099]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9857864, 6.2901196, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9857864, 6.2901196, 2.3572183)
 light_energy = 7.29
 omni_range = 15.189
 
+[node name="saw_disk4" parent="." unique_id=1957398769 instance=ExtResource("10_urh80")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 4.2032037, 1.3649045, 1.7209018)
+
+[node name="water_tube3" parent="." unique_id=444870089 instance=ExtResource("12_sdqxo")]
+transform = Transform3D(-3.059797e-09, 0, -0.07, 0.00926158, 0.069384605, -4.0483653e-10, 0.069384605, -0.00926158, -3.0328973e-09, 4.1860933, 1.6966002, 1.6312416)
+
+[node name="crepl_for_tube3" parent="." unique_id=938770046 instance=ExtResource("13_r11ev")]
+transform = Transform3D(-3.059797e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.059797e-09, 4.189968, 2.189346, 0.618118)
+visible = false
+
+[node name="player2" parent="." unique_id=43997777 instance=ExtResource("13_urh80")]
+transform = Transform3D(-0.0016580058, 0, -0.9999986, 0, 1, 0, 0.9999986, 0, -0.0016580058, -2.0136828, 1.1988857, 3.0511913)
+
+[node name="crepl_for_tube4" parent="." unique_id=2026198966 instance=ExtResource("10_3i2ig")]
+transform = Transform3D(-3.059797e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.059797e-09, 4.1774216, 1.6923912, 1.1194987)
+
+[node name="water_tube4" parent="." unique_id=604423843 instance=ExtResource("11_3hjra")]
+transform = Transform3D(-3.0329186e-09, 4.046777e-10, -0.07, 0.009257947, 0.06938509, 0, 0.06938509, -0.009257947, -3.059797e-09, 4.186, 1.697, 1.631)
+visible = false
+
+[node name="water_drop" parent="." unique_id=747276257 instance=ExtResource("12_3hjra")]
+transform = Transform3D(0.01, 0, 0, 0, 0.009526614, -0.0030403307, 0, 0.0030403307, 0.009526614, 4.1867037, 1.914102, 2.1323912)
+
+[node name="water_drop_area" type="Area3D" parent="water_drop" unique_id=1064895079]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="water_drop/water_drop_area" unique_id=893232561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17297363, 0.41323853, -0.13189697)
+shape = SubResource("SphereShape3D_3hjra")
+
+[node name="water_drop2" parent="." unique_id=917746846 instance=ExtResource("12_3hjra")]
+transform = Transform3D(0.01, 0, 0, 0, 0.009526614, -0.0030403307, 0, 0.0030403307, 0.009526614, 4.1440597, 1.942125, 2.1323912)
+
+[node name="water_drop2_area" type="Area3D" parent="water_drop2" unique_id=1914743768]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="water_drop2/water_drop2_area" unique_id=1200021304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11657715, -0.3652649)
+shape = SubResource("SphereShape3D_urh80")
+
+[node name="water_drop3" parent="." unique_id=998207838 instance=ExtResource("12_3hjra")]
+transform = Transform3D(0.01, 0, 0, 0, 0.009526614, -0.0030403307, 0, 0.0030403307, 0.009526614, 4.241946, 1.9294313, 2.1323912)
+
+[node name="water_drop3_area" type="Area3D" parent="water_drop3" unique_id=145498702]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="water_drop3/water_drop3_area" unique_id=1514050454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09371948, 0.2936859)
+shape = SubResource("SphereShape3D_sdqxo")
+
+[node name="water_drop4" parent="." unique_id=1795558969 instance=ExtResource("12_3hjra")]
+transform = Transform3D(0.01, 0, 0, 0, 0.009526614, -0.0030403307, 0, 0.0030403307, 0.009526614, 4.2083144, 1.942125, 2.1323912)
+
+[node name="water_drop4_area" type="Area3D" parent="water_drop4" unique_id=1036842639]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="water_drop4/water_drop4_area" unique_id=1606802931]
+shape = SubResource("SphereShape3D_r11ev")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=106616500]
+libraries/ = SubResource("AnimationLibrary_r11ev")
+autoplay = &"pila_animation"
+
+[node name="backet" parent="." unique_id=953193076 instance=ExtResource("13_sdqxo")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.861131, 1.4466137, 1.889327)
+
+[node name="Area3D" type="Area3D" parent="backet" unique_id=440631077]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="backet/Area3D" unique_id=1678183737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0040893853, 0.10153198, 0.0020446777)
+shape = SubResource("BoxShape3D_sdqxo")
+
+[node name="fluorite_pick" parent="." unique_id=816411721 instance=ExtResource("15_r11ev")]
+transform = Transform3D(-0.49160317, 0, 0.87081933, 0, 1, 0, -0.87081933, 0, -0.49160317, 1.5027517, 1.264039, 4.524541)
+
+[node name="calcit2" parent="fluorite_pick" unique_id=309141898 instance=ExtResource("16_vlybq")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.0060127974, 0.0018957853, 0.0065426826)
+
+[node name="bottle_pick" parent="." unique_id=1850896899 instance=ExtResource("16_lqdpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.302, 1.693, 1.668)
+
+[node name="bottle_acid" parent="." unique_id=87595013 instance=ExtResource("14_sdqxo")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.30189568, 1.6929646, 1.6677428)
+visible = false
+
+[node name="bottle_acid_area" type="Area3D" parent="bottle_acid" unique_id=1813079875]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bottle_acid/bottle_acid_area" unique_id=1161161081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0035254955, 0.14257813, -0.013946533)
+shape = SubResource("BoxShape3D_vlybq")
+
 [connection signal="dropped" from="ftorapatit_pick" to="." method="_on_ftorapatit_pick_dropped"]
+[connection signal="grabbed" from="ftorapatit_pick" to="." method="_on_ftorapatit_pick_grabbed"]
+[connection signal="area_entered" from="Table2/Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Table2/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="area_entered" from="backet/Area3D" to="." method="_on_area_3d_bucket_area_entered"]

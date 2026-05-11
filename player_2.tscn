@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bh454fqvqs13r"]
+
+[ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_wkcja"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_8xjnt"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_1hlws"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_ufh5k"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_0jhxp"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_x3sgo"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="5_0jhxp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x3sgo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1hlws"]
+
+[node name="player2" type="Node3D" unique_id=43997777]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=770019044]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=713191044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36282504, 0)
+
+[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" unique_id=967936369 instance=ExtResource("1_wkcja")]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1968867832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36282504, 0)
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/LeftController" unique_id=1935795021 instance=ExtResource("2_8xjnt")]
+
+[node name="MovementTurn" parent="XROrigin3D/LeftController" unique_id=1807774544 instance=ExtResource("3_1hlws")]
+turn_mode = 2
+
+[node name="MovementDirect" parent="XROrigin3D/LeftController" unique_id=170068616 instance=ExtResource("4_0jhxp")]
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftController" unique_id=1409732562 instance=ExtResource("5_0jhxp")]
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1091321343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36282504, 0)
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightController" unique_id=169862265 instance=ExtResource("3_ufh5k")]
+
+[node name="MovementDirect" parent="XROrigin3D/RightController" unique_id=1076927549 instance=ExtResource("4_0jhxp")]
+
+[node name="MovementTurn" parent="XROrigin3D/RightController" unique_id=960905614 instance=ExtResource("3_1hlws")]
+turn_mode = 2
+
+[node name="FunctionPickup" parent="XROrigin3D/RightController" unique_id=994154181 instance=ExtResource("5_0jhxp")]
+
+[node name="PlayerBody" parent="XROrigin3D" unique_id=1893059930 instance=ExtResource("4_x3sgo")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/PlayerBody" unique_id=1988055767]
+shape = SubResource("CapsuleShape3D_x3sgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/PlayerBody" unique_id=355858609]
+mesh = SubResource("CapsuleMesh_1hlws")
