@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cf1u2rw4uapsx"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_2eoad"]
+[ext_resource type="PackedScene" uid="uid://cmv3gem7vc3b0" path="res://assets/minerals/halite/halite_part1.glb" id="2_7ca2f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4wlh1"]
+size = Vector3(0.24046387, 0.4205293, 0.35276562)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2eoad"]
+size = Vector3(0.2614746, 0.43237305, 0.36791992)
+
+[node name="halite_first_part" unique_id=1823250733 instance=ExtResource("1_2eoad")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093376465, 0.017246291, -0.01427345)
+shape = SubResource("BoxShape3D_4wlh1")
+
+[node name="halite_part1" parent="CollisionShape3D" index="0" unique_id=1227687009 instance=ExtResource("2_7ca2f")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.093376465, -0.017246291, 0.01427345)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1107988029]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=446727607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.092163086, 0.01574707, -0.014770508)
+shape = SubResource("BoxShape3D_2eoad")

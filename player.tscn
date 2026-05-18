@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4n2xq8dtxmur"]
 
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://d4nh4pcsx7k4x" path="res://player.gd" id="1_nvl01"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_sweqy"]
@@ -12,6 +13,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2hs0m"]
 
 [node name="player" type="Node3D" unique_id=103094377]
+script = ExtResource("1_nvl01")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=552282409]
 
@@ -20,7 +22,7 @@
 [node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" unique_id=1486361032 instance=ExtResource("1_i3pqv")]
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=164655601]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28813028, -0.13385636, -0.25604904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34325284, -0.13385636, -0.25604904)
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="XROrigin3D/LeftController" unique_id=1323475398 instance=ExtResource("2_hqtel")]
@@ -39,7 +41,7 @@ laser_length = 1
 [node name="FunctionPickup" parent="XROrigin3D/LeftController" unique_id=1935628855 instance=ExtResource("6_dw050")]
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=678716529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29371077, -0.13747412, -0.22152007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23414296, -0.13747412, -0.22152007)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="XROrigin3D/RightController" unique_id=1460184479 instance=ExtResource("3_sweqy")]
@@ -63,3 +65,5 @@ axis_lock_linear_y = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/PlayerBody" unique_id=1286954403]
 shape = SubResource("CapsuleShape3D_2hs0m")
+
+[connection signal="button_pressed" from="XROrigin3D/LeftController" to="." method="_on_left_controller_button_pressed"]

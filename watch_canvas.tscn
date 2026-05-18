@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://c17warxwbxre0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf4g6"]
+bg_color = Color(0, 0.6784314, 0.74509805, 0.83137256)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vf4g6"]
+font_size = 25
+
+[node name="watch_canvas" type="CanvasLayer" unique_id=2136377113]
+
+[node name="Control" type="Control" parent="." unique_id=152600622]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=356877777]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.994
+offset_right = 4.0
+offset_bottom = -0.11199951
+theme_override_styles/panel = SubResource("StyleBoxFlat_vf4g6")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=673172740]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 1.0
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer" unique_id=622062872]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=971632865]
+layout_mode = 2
+text = "Выберите режим"
+label_settings = SubResource("LabelSettings_vf4g6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=11838848]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Просмотр музея"
+
+[node name="Button2" type="Button" parent="Control/Panel/MarginContainer/VBoxContainer" unique_id=496932420]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Обработка минералов"

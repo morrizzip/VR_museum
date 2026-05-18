@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bh454fqvqs13r"]
 
+[ext_resource type="Script" uid="uid://bffe1s3jv2p3i" path="res://player_2.gd" id="1_jaoer"]
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_wkcja"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_8xjnt"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_1hlws"]
+[ext_resource type="Material" uid="uid://ds2dpvbpht0ea" path="res://addons/godot-xr-tools/hands/materials/labglove.tres" id="3_6iqoo"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_ufh5k"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_0jhxp"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_x3sgo"]
@@ -13,6 +15,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1hlws"]
 
 [node name="player2" type="Node3D" unique_id=43997777]
+script = ExtResource("1_jaoer")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=770019044]
 
@@ -26,6 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36282504, 0)
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="XROrigin3D/LeftController" unique_id=1935795021 instance=ExtResource("2_8xjnt")]
+hand_material_override = ExtResource("3_6iqoo")
 
 [node name="MovementTurn" parent="XROrigin3D/LeftController" unique_id=1807774544 instance=ExtResource("3_1hlws")]
 turn_mode = 2
@@ -39,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36282504, 0)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="XROrigin3D/RightController" unique_id=169862265 instance=ExtResource("3_ufh5k")]
+hand_material_override = ExtResource("3_6iqoo")
 
 [node name="MovementDirect" parent="XROrigin3D/RightController" unique_id=1076927549 instance=ExtResource("4_0jhxp")]
 
@@ -53,4 +58,7 @@ turn_mode = 2
 shape = SubResource("CapsuleShape3D_x3sgo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/PlayerBody" unique_id=355858609]
+visible = false
 mesh = SubResource("CapsuleMesh_1hlws")
+
+[connection signal="button_pressed" from="XROrigin3D/LeftController" to="." method="_on_left_controller_button_pressed"]

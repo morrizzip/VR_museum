@@ -2,24 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_nlk4v"]
 [ext_resource type="PackedScene" uid="uid://bibod51gr00k7" path="res://assets/models/breakable_glass_bottle.glb" id="2_vgtds"]
+[ext_resource type="PackedScene" uid="uid://bgwm40soahvlh" path="res://assets/models/hci.glb" id="3_vgtds"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yoabj"]
-size = Vector3(0.25048828, 0.5324707, 0.20715332)
+size = Vector3(0.19750977, 0.50201416, 0.19390869)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_esabl"]
-size = Vector3(0.28564453, 0.5586548, 0.2397461)
+size = Vector3(0.21948242, 0.5239563, 0.20977783)
 
 [node name="bottle_pick" unique_id=1850896899 instance=ExtResource("1_nlk4v")]
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004333496, -0.0011755824, 0.0077368617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017917156, 0.014052689, 0.004375994)
 shape = SubResource("BoxShape3D_yoabj")
 
 [node name="bottle" parent="CollisionShape3D" index="0" unique_id=87595013 instance=ExtResource("2_vgtds")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+visible = false
+
+[node name="hci" parent="CollisionShape3D" index="1" unique_id=706586822 instance=ExtResource("3_vgtds")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="bottle_acid_area" type="Area3D" parent="." index="1" unique_id=1821376982]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bottle_acid_area" index="0" unique_id=761916305]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031738281, 3.0517578e-05, 0.009521484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00061035156, 0.01737976, 0.004119873)
 shape = SubResource("BoxShape3D_esabl")

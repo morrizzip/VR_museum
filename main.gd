@@ -47,6 +47,7 @@ extends Node3D
 @onready var mineral_label8_node: Label = viewport_2_din_3d_13.get_node("Viewport/CanvasLayer/Control/Label8")
 @onready var mineral_label6_node: Label = viewport_2_din_3d_13.get_node("Viewport/CanvasLayer/Control/Label6")
 
+@onready var label_menu: Label = $Label
 
 @onready var load_line: Node3D = $load_line
 @onready var load_animation: AnimationPlayer = load_line.get_node("AnimationPlayer")
@@ -124,6 +125,9 @@ func _ready() -> void:
 	point_mineral_6_viewport_2_din_3d.visible = false
 	
 	load_minerals_from_server()
+	
+	await get_tree().create_timer(10.0).timeout
+	label_menu.visible = false
 
 func load_minerals_from_server():
 	var http_request = HTTPRequest.new()

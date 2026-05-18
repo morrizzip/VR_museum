@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cf5svmmsfoihf"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_0dk87"]
+[ext_resource type="PackedScene" uid="uid://dnytqalhbjao4" path="res://assets/minerals/fluorite/parts/fluorite_part1.glb" id="2_3tjmm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_alkcb"]
+size = Vector3(0.20281176, 0.41022363, 0.12500978)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0dk87"]
+size = Vector3(0.23242188, 0.4238739, 0.14758301)
+
+[node name="fluorite_first_part" unique_id=2011333348 instance=ExtResource("1_0dk87")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013994195, 0.013436019, -0.0034130812)
+shape = SubResource("BoxShape3D_alkcb")
+
+[node name="fluorite_part1" parent="CollisionShape3D" index="0" unique_id=1818081190 instance=ExtResource("2_3tjmm")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.0075512156, -0.013436019, 0.038009703)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1060763717]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2117058575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, 0.013832092, -0.003967285)
+shape = SubResource("BoxShape3D_0dk87")

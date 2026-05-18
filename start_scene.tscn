@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://djtnsgn0dppai"]
+
+[ext_resource type="Texture2D" uid="uid://lualhvycxusm" path="res://assets/GS__0855_edit.png" id="1_ejy2n"]
+[ext_resource type="PackedScene" uid="uid://duhq0xnsbjemc" path="res://floor.tscn" id="1_mbe3m"]
+[ext_resource type="PackedScene" uid="uid://c4n2xq8dtxmur" path="res://player.tscn" id="2_kyjdd"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="3_jfucu"]
+[ext_resource type="PackedScene" uid="uid://dbqtx6py8cs3x" path="res://start_menu_canvas.tscn" id="4_oq0ge"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4a4tu"]
+panorama = ExtResource("1_ejy2n")
+
+[sub_resource type="Sky" id="Sky_ejy2n"]
+sky_material = SubResource("PanoramaSkyMaterial_4a4tu")
+
+[sub_resource type="Environment" id="Environment_4a4tu"]
+background_mode = 2
+sky = SubResource("Sky_ejy2n")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="start_scene" type="Node3D" unique_id=1729448269]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=276762075]
+environment = SubResource("Environment_4a4tu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1429533483]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="floor" parent="." unique_id=1844043432 instance=ExtResource("1_mbe3m")]
+visible = false
+
+[node name="player" parent="." unique_id=103094377 instance=ExtResource("2_kyjdd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7701764, 0)
+
+[node name="start_menu" parent="." unique_id=953835333 instance=ExtResource("3_jfucu")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 1.714884, -0.6519449)
+screen_size = Vector2(1280, 768)
+scene = ExtResource("4_oq0ge")
+viewport_size = Vector2(640, 360)
+transparent = 1
+unshaded = true
+scene_properties_keys = PackedStringArray("start_menu_canvas.gd")

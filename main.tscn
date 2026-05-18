@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bgycie6myihp2" path="res://assets/models/panel_done3.glb" id="23_d13ii"]
 [ext_resource type="PackedScene" uid="uid://cxq7q8orxbpq6" path="res://assets/models/panel_done4.glb" id="24_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://0j0rh1lmld5x" path="res://load_line.tscn" id="25_0odxb"]
+[ext_resource type="PackedScene" uid="uid://dbqtx6py8cs3x" path="res://start_menu_canvas.tscn" id="26_lswn8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2yge"]
 panorama = ExtResource("2_1u8w0")
@@ -37,6 +38,9 @@ background_mode = 2
 sky = SubResource("Sky_ig7tw")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_lswn8"]
+font_size = 24
 
 [node name="main" type="Node3D" unique_id=758511810]
 script = ExtResource("1_lquwl")
@@ -134,6 +138,8 @@ scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.7014739, 2.0212889)
 scene = ExtResource("18_074og")
 transparent = 1
+unshaded = true
+filter = false
 scene_properties_keys = PackedStringArray("mineral_canvas_layer.gd")
 
 [node name="apatit2" parent="." unique_id=237753180 instance=ExtResource("19_cegan")]
@@ -287,6 +293,24 @@ scene_properties_keys = PackedStringArray("icon_canvas_layer.gd")
 [node name="load_line" parent="." unique_id=557718279 instance=ExtResource("25_0odxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1162295, 1.8722377)
 visible = false
+
+[node name="start_menu" parent="." unique_id=229525903 instance=ExtResource("6_272bh")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.3065285, -1.815649)
+visible = false
+screen_size = Vector2(1280, 768)
+scene = ExtResource("26_lswn8")
+viewport_size = Vector2(640, 360)
+transparent = 1
+scene_properties_keys = PackedStringArray("start_menu_canvas.gd")
+
+[node name="Label" type="Label" parent="." unique_id=1374059748]
+anchors_preset = -1
+anchor_right = 0.15200001
+anchor_bottom = 0.16700001
+offset_right = -0.104003906
+offset_bottom = -0.21600342
+text = "Для возврата в меню нажмите кнопку menu на контроллере"
+label_settings = SubResource("LabelSettings_lswn8")
 
 [connection signal="pointer_event" from="Viewport2Din3D10" to="." method="_on_arrow_10_viewport_2_din_3d_10_pointer_event"]
 [connection signal="pointer_event" from="Viewport2Din3D12" to="." method="_on_viewport_2_din_3d_12_pointer_event"]

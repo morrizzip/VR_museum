@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dbqtx6py8cs3x"]
+
+[ext_resource type="Script" uid="uid://dyeij5vhmti4v" path="res://start_menu_canvas.gd" id="1_a8vuh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of2wl"]
+bg_color = Color(1.8770993e-06, 0.5123457, 0.58377606, 0.85490197)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_of2wl"]
+font_size = 25
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1580065423]
+script = ExtResource("1_a8vuh")
+
+[node name="Control" type="Control" parent="." unique_id=1871963893]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=897137460]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_of2wl")
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel" unique_id=5115083]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.006
+anchor_bottom = 1.0
+offset_right = 0.11193848
+offset_bottom = 5.0
+color = Color(0, 0.5137255, 0.6627451, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel/ColorRect" unique_id=383649777]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 1.0
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/ColorRect/MarginContainer" unique_id=1422511810]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="Control/Panel/ColorRect/MarginContainer/VBoxContainer" unique_id=1119780561]
+layout_mode = 2
+text = "Выберите режим"
+label_settings = SubResource("LabelSettings_of2wl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Panel/ColorRect/MarginContainer/VBoxContainer" unique_id=743528984]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Просмотр музея"
+
+[node name="Button2" type="Button" parent="Control/Panel/ColorRect/MarginContainer/VBoxContainer" unique_id=2002848298]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Обработка минералов"
+
+[connection signal="pressed" from="Control/Panel/ColorRect/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel/ColorRect/MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

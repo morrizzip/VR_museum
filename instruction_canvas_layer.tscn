@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://by14icr4nj5ey"]
+
+[ext_resource type="Texture2D" uid="uid://bca1rwma8r2hp" path="res://images_instruction/instruction1_cut.png" id="1_7yodq"]
+[ext_resource type="Script" uid="uid://iys5ox6en22b" path="res://instruction_canvas_layer.gd" id="1_odabv"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=822798538]
+script = ExtResource("1_odabv")
+
+[node name="Control" type="Control" parent="." unique_id=1451965191]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 287.0
+offset_bottom = 254.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1693048582]
+anchors_preset = -1
+anchor_right = 0.65400004
+anchor_bottom = 0.61
+offset_right = 125.59192
+offset_bottom = 8.720001
+color = Color(0.59899896, 0.6496584, 0.5640345, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=763191851]
+visible = false
+offset_right = 295.58762
+offset_bottom = 126.0
+texture = ExtResource("1_7yodq")
+expand_mode = 1
