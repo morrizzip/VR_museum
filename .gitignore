@@ -1,3 +1,18 @@
-# Godot 4+ specific ignores
 .godot/
 /android/
+
+__pycache__/
+*.pyc
+
+venv/
+env/
+.env
+
+*.iml
+.idea/
+
+uploads/
+instance/
+dist/
+build/
+*.egg-info/
